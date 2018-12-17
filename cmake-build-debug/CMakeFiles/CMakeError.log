@@ -1,0 +1,55 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/markus/Dokumente/gitshit/cg_solar/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_fa214/fast"
+/usr/bin/make -f CMakeFiles/cmTC_fa214.dir/build.make CMakeFiles/cmTC_fa214.dir/build
+make[1]: Verzeichnis „/home/markus/Dokumente/gitshit/cg_solar/cmake-build-debug/CMakeFiles/CMakeTmp“ wird betreten
+Building C object CMakeFiles/cmTC_fa214.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_fa214.dir/CheckSymbolExists.c.o   -c /home/markus/Dokumente/gitshit/cg_solar/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_fa214
+/snap/clion/56/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fa214.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_fa214.dir/CheckSymbolExists.c.o  -o cmTC_fa214 
+CMakeFiles/cmTC_fa214.dir/CheckSymbolExists.c.o: In Funktion `main':
+CheckSymbolExists.c:(.text+0x16): Nicht definierter Verweis auf `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_fa214.dir/build.make:86: die Regel für Ziel „cmTC_fa214“ scheiterte
+make[1]: *** [cmTC_fa214] Fehler 1
+make[1]: Verzeichnis „/home/markus/Dokumente/gitshit/cg_solar/cmake-build-debug/CMakeFiles/CMakeTmp“ wird verlassen
+Makefile:121: die Regel für Ziel „cmTC_fa214/fast“ scheiterte
+make: *** [cmTC_fa214/fast] Fehler 2
+
+File /home/markus/Dokumente/gitshit/cg_solar/cmake-build-debug/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/markus/Dokumente/gitshit/cg_solar/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_64060/fast"
+/usr/bin/make -f CMakeFiles/cmTC_64060.dir/build.make CMakeFiles/cmTC_64060.dir/build
+make[1]: Verzeichnis „/home/markus/Dokumente/gitshit/cg_solar/cmake-build-debug/CMakeFiles/CMakeTmp“ wird betreten
+Building C object CMakeFiles/cmTC_64060.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_64060.dir/CheckFunctionExists.c.o   -c /snap/clion/56/bin/cmake/linux/share/cmake-3.13/Modules/CheckFunctionExists.c
+Linking C executable cmTC_64060
+/snap/clion/56/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_64060.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_64060.dir/CheckFunctionExists.c.o  -o cmTC_64060 -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_64060.dir/build.make:86: die Regel für Ziel „cmTC_64060“ scheiterte
+make[1]: *** [cmTC_64060] Fehler 1
+make[1]: Verzeichnis „/home/markus/Dokumente/gitshit/cg_solar/cmake-build-debug/CMakeFiles/CMakeTmp“ wird verlassen
+Makefile:121: die Regel für Ziel „cmTC_64060/fast“ scheiterte
+make: *** [cmTC_64060/fast] Fehler 2
+
+
