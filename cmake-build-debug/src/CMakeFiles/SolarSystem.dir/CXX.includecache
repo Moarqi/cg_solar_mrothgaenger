@@ -66,20 +66,6 @@ GL/glu.h
 vulkan/vulkan.h
 -
 
-../lib/lodePNG/lodepng.h
-string.h
--
-vector
--
-string
--
-lodepng.h
-../lib/lodePNG/lodepng.h
-iostream
--
-lodepng.h
-../lib/lodePNG/lodepng.h
-
 ../lib/utils/gl.h
 glew.h
 -
@@ -138,18 +124,6 @@ vector
 mesh.h
 ../lib/utils/mesh.h
 
-/home/markus/Dokumente/gitshit/cg_solar/src/billboard.cpp
-billboard.h
-/home/markus/Dokumente/gitshit/cg_solar/src/billboard.h
-iostream
--
-cmath
--
-cassert
--
-algorithm
--
-
 /home/markus/Dokumente/gitshit/cg_solar/src/billboard.h
 glmath.h
 /home/markus/Dokumente/gitshit/cg_solar/src/glmath.h
@@ -159,14 +133,6 @@ texture.h
 /home/markus/Dokumente/gitshit/cg_solar/src/texture.h
 mesh.h
 /home/markus/Dokumente/gitshit/cg_solar/src/mesh.h
-
-/home/markus/Dokumente/gitshit/cg_solar/src/main.cpp
-solar_viewer.h
-/home/markus/Dokumente/gitshit/cg_solar/src/solar_viewer.h
-
-/home/markus/Dokumente/gitshit/cg_solar/src/planet.cpp
-planet.h
-/home/markus/Dokumente/gitshit/cg_solar/src/planet.h
 
 /home/markus/Dokumente/gitshit/cg_solar/src/planet.h
 texture.h
@@ -186,14 +152,6 @@ texture.h
 mesh.h
 /home/markus/Dokumente/gitshit/cg_solar/src/mesh.h
 
-/home/markus/Dokumente/gitshit/cg_solar/src/ship.cpp
-ship.h
-/home/markus/Dokumente/gitshit/cg_solar/src/ship.h
-fstream
--
-string
--
-
 /home/markus/Dokumente/gitshit/cg_solar/src/ship.h
 glmath.h
 /home/markus/Dokumente/gitshit/cg_solar/src/glmath.h
@@ -205,6 +163,8 @@ mesh.h
 /home/markus/Dokumente/gitshit/cg_solar/src/mesh.h
 
 /home/markus/Dokumente/gitshit/cg_solar/src/solar_viewer.cpp
+cmath
+-
 solar_viewer.h
 /home/markus/Dokumente/gitshit/cg_solar/src/solar_viewer.h
 glmath.h
@@ -233,18 +193,6 @@ billboard.h
 /home/markus/Dokumente/gitshit/cg_solar/src/billboard.h
 saturn_rings.h
 /home/markus/Dokumente/gitshit/cg_solar/src/saturn_rings.h
-
-/home/markus/Dokumente/gitshit/cg_solar/src/texture.cpp
-texture.h
-/home/markus/Dokumente/gitshit/cg_solar/src/texture.h
-iostream
--
-assert.h
--
-lodepng.h
-/home/markus/Dokumente/gitshit/cg_solar/src/lodepng.h
-algorithm
--
 
 /home/markus/Dokumente/gitshit/cg_solar/src/texture.h
 gl.h

@@ -39,7 +39,7 @@ void main()
     vec3 m_color = texture(tex, v2f_texcoord.st).rgb;
 
     // ambient contribution
-    color += m_color * sunlight;
+    color += m_color * sunlight * 0.2;
     
     // compute light vector            
     float dotLightNormal = dot(v2f_light, v2f_normal);
@@ -52,7 +52,7 @@ void main()
         float dotReflectionView = dot(n_reflectionVector, v2f_view);
 
         if (dotReflectionView >= 0.0) {
-            color += sunlight * (m_specular * pow(dotReflectionView, shininess));
+            color += sunlight * (m_color * pow(dotReflectionView, shininess)) * 0.2;
         }
     }         
 

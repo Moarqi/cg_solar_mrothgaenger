@@ -98,15 +98,29 @@ void Texture::createSunglowTexture()
     *   - Make sure that your texture is fully transparent (alpha == 0) at its borders to avoid seeing visible edges
     *	- Experiment with the color and with how fast you change the transparency until the effect satisfies you
     **/
+    int radiusPixel = 150;
 
     for (int w = 0; w < width; w++)
     {
         for (int h = 0; h < height; h++)
         {
-            img[(w*width + h) * 4 + 0] = 1.0;//red
-            img[(w*width + h) * 4 + 1] = 1.0;//green
-            img[(w*width + h) * 4 + 2] = 1.0;//blue
-            img[(w*width + h) * 4 + 3] = 1.0;//alpha
+            img[(w * width + h) * 4 + 0] = 1.0;//red
+            img[(w * width + h) * 4 + 1] = 0.5;//green
+            img[(w * width + h) * 4 + 2] = 0.0;//blue
+
+            int w_dist = abs((width/2) - w);
+            int h_dist = abs((height/2) - h);
+
+            double dist = sqrt(w_dist * w_dist + h_dist * h_dist);
+
+            if (dist <= radiusPixel) {
+                img[(w * width + h) * 4 + 3] = 1.0;//alpha
+            }
+            else {
+                auto factor = (float) pow(0.97, dist - 150);
+                float alpha = factor;
+                img[(w * width + h) * 4 + 3] = alpha;//alpha
+            }
 
         }
     }

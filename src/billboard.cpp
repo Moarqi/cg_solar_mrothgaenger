@@ -1,3 +1,5 @@
+#include <cmath>
+
 #include "billboard.h"
 #include <iostream>
 #include <cmath>
@@ -80,6 +82,13 @@ bool Billboard::initGlArrays()
 
 void Billboard::computeBillboardAngles(const vec3 &billboard_to_eye)
 {
+    float r = norm(billboard_to_eye);
+    //std::cout << billboard_to_eye.z << "\n";
+    //std::cout << r << "\n";
+    angle_x_ = rad2deg(std::acos(billboard_to_eye.y/r)) - 90; // y is the up direction in our coordinate system!
+    angle_y_ = 90 - rad2deg(std::atan2(billboard_to_eye.z, billboard_to_eye.x));
+
+    //std::cout << "BILL X: " << angle_x_ << " " << "Y: " << angle_y_ << "\n";
     /** \todo update `angle_x_` and `angle_y_` of the billboard.
     *   - Make sure that the vector `billboard_to_eye` is always perpendicular to the billboard's plane
     *	- The two angles are related to the polar and azimuthal angle of a sphere (see https://en.wikipedia.org/wiki/Spherical_coordinate_system)

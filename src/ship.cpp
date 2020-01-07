@@ -32,6 +32,37 @@ bool Ship::load_model(const char* _filename)
 		return false;
 	}
 
+	// read vertice count
+	int vertices;
+	ifs >> vertices;
+	std::cout << vertices;
+
+	int faces;
+	ifs >> faces;
+
+	int something;
+	ifs >> something;
+
+	for (int i = 0; i < vertices; i++) {
+		float x;
+		float y;
+		float z;
+		ifs >> x;
+		ifs >> y;
+		ifs >> z;
+		vertices_.push_back(vec3(x,y,z));
+	}
+	for (int i = 0; i < faces; i++) {
+		int a, b, c;
+		ifs >> a; // ist egal
+		ifs >> a;
+		ifs >> b;
+		ifs >> c;
+		indices_.push_back(a);
+		indices_.push_back(b);
+		indices_.push_back(c);
+	}
+
 	/** \todo Implement a simple .off reader.
 	*   `.off` is a simple text-based mesh format
 	*	1. open /meshes/cube.off with a text editor and try to find out how an `.off` file saves the mesh information
@@ -43,15 +74,6 @@ bool Ship::load_model(const char* _filename)
 	*	- use cube.off for debugging and feel free to use your favourite spaceship mesh once your parser works.
 	*	- 3D modelling software is capable of reading and writing `.off` files. (for example, google "blender import .off")
 	**/
-
-	// DELETE ME BEGIN
-	vertices_.push_back(vec3(0,0,2));
-	vertices_.push_back(vec3(1, 0, 0));
-	vertices_.push_back(vec3(-1, 0, 0));
-        indices_.push_back(0);
-        indices_.push_back(1);
-        indices_.push_back(2);
-	// DELETE ME END
 
 
 

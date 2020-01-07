@@ -33,5 +33,14 @@ void main()
      *   and continue with the fragment shader
      */
 
+    // extract the view vector from the modelview matrix
+     vec3 epos = (modelview_matrix * v_position).xyz;
+     v2f_view = normalize(-epos);
+     v2f_texcoord = v_texcoord;
+     v2f_normal = normalize(normal_matrix * v_normal);
+     // light position in eye space minus v_position transformed to eye space
+     v2f_light = normalize(light_position.xyz - epos);
 
+
+     gl_Position = modelview_projection_matrix * v_position;
 } 
